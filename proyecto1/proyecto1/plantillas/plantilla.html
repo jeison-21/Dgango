@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Django</title>
+</head>
+
+<body>
+    <h1 style="color: brown;">Estamos Aprendiendo Django</h1>
+    {% if nombre_persona == 'Profesor Juan' %}
+    <p>
+        El Curso lo imparte el profesor titular
+    </p>
+    {#No temas}
+    {% else%}
+    <p>El curso lo imparte el profesor suplente</p>
+    {%endif%}
+    <p>
+        El nombre del profesor es : {{nombre_persona.upper}} {{apellido_persona.upper}}
+    </p>
+    <p>
+        Estamos viendo el tema de las plantillas al d&iacute;a : {{momento_actual.day}} del mes:
+        {{momento_actual.month}}
+    </p>
+    <p><strong>Temas del Curso</strong></p>
+    <p>
+    <ul>
+        {% if temas %}
+            {% for eltema in temas %}
+                <li>{{eltema}}</li>
+            {% endfor %}
+            {%else%}
+                <p>No Hay Elementos que mostrar</p>
+        {% endif %}
+
+    </ul>
+    </p>
+</body>
+
+</html>
